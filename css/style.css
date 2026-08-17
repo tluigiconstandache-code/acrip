@@ -1,0 +1,859 @@
+/* =========================================
+   A.C.R.I.P. - Site oficial
+   Stil principal
+========================================= */
+
+:root {
+    --blue: #0b5fad;
+    --blue-dark: #083f73;
+    --green: #18783e;
+    --orange: #f59a00;
+
+    --text: #27313a;
+    --muted: #66717c;
+
+    --white: #ffffff;
+    --light: #f5f8fb;
+    --border: #e3e8ee;
+
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+
+    --radius: 18px;
+
+    --container: 1180px;
+}
+
+
+/* =========================================
+   Reset
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================
+   Container general
+========================================= */
+
+.container {
+    width: min(var(--container), 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   Header
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.header-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.header-logo {
+    width: 82px;
+    height: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text strong {
+    color: var(--blue);
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.brand-text span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   Meniu
+========================================= */
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.nav a {
+    position: relative;
+
+    color: var(--text);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--blue);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--blue);
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   Hero
+========================================= */
+
+.hero {
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 0;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(245, 154, 0, 0.18),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(11, 95, 173, 0.15),
+            transparent 26%
+        ),
+        linear-gradient(
+            135deg,
+            #f7fbff 0%,
+            #ffffff 55%,
+            #f4f9f6 100%
+        );
+}
+
+.hero-content {
+    max-width: 900px;
+
+    text-align: center;
+}
+
+.hero-logo {
+    width: 230px;
+
+    margin: 0 auto 28px;
+}
+
+.eyebrow {
+    margin-bottom: 16px;
+
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    color: var(--blue);
+
+    font-size: clamp(56px, 8vw, 90px);
+    line-height: 1;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.hero h2 {
+    color: var(--text);
+
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 600;
+
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: 19px;
+}
+
+.hero-buttons {
+    margin-top: 38px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   Butoane
+========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 28px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.button-primary {
+    color: var(--white);
+    background: var(--blue);
+
+    box-shadow: 0 10px 25px rgba(11, 95, 173, 0.25);
+}
+
+.button-primary:hover {
+    background: var(--blue-dark);
+
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    color: var(--blue);
+
+    border: 2px solid var(--blue);
+    background: transparent;
+}
+
+.button-secondary:hover {
+    color: var(--white);
+    background: var(--blue);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   Secțiuni
+========================================= */
+
+.section {
+    padding: 95px 0;
+}
+
+.section-light {
+    background: var(--light);
+}
+
+.section-heading {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading span {
+    color: var(--orange);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    color: var(--blue-dark);
+
+    font-size: clamp(32px, 5vw, 46px);
+}
+
+.section-heading p {
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   Cards
+========================================= */
+
+.cards {
+    display: grid;
+
+    gap: 28px;
+}
+
+.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    padding: 34px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    margin-bottom: 18px;
+
+    font-size: 42px;
+}
+
+.card h3 {
+    color: var(--blue-dark);
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+
+/* =========================================
+   Obiective
+========================================= */
+
+.objectives-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.objective {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+.objective > span {
+    flex: 0 0 60px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--white);
+    background: var(--orange);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.objective h3 {
+    color: var(--blue-dark);
+
+    margin-bottom: 6px;
+}
+
+.objective p {
+    color: var(--muted);
+}
+
+
+/* =========================================
+   Proiecte
+========================================= */
+
+.project-card {
+    position: relative;
+}
+
+.project-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    color: var(--green);
+    background: rgba(24, 120, 62, 0.10);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-card a {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: var(--blue);
+
+    font-weight: 600;
+}
+
+.project-card a:hover {
+    color: var(--orange);
+}
+
+
+/* =========================================
+   Noutăți
+========================================= */
+
+.news-placeholder {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border: 2px dashed #cbd4dd;
+    border-radius: var(--radius);
+
+    background: var(--white);
+}
+
+.news-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.news-placeholder h3 {
+    color: var(--blue-dark);
+
+    font-size: 24px;
+}
+
+.news-placeholder p {
+    color: var(--muted);
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   Contact
+========================================= */
+
+.contact-section {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(11, 95, 173, 0.06),
+            rgba(24, 120, 62, 0.06)
+        );
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.contact-card {
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--white);
+}
+
+.contact-icon {
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.contact-card h3 {
+    color: var(--blue-dark);
+
+    margin-bottom: 6px;
+}
+
+.contact-card p,
+.contact-card a {
+    color: var(--muted);
+}
+
+.contact-card a:hover {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   Footer
+========================================= */
+
+.footer {
+    color: #dce7f1;
+    background: #092f52;
+}
+
+.footer-container {
+    padding: 42px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    max-width: 620px;
+
+    gap: 18px;
+}
+
+.footer-brand img {
+    width: 95px;
+    height: auto;
+}
+
+.footer-brand strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    margin-top: 5px;
+
+    color: #dce7f1;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    gap: 18px;
+}
+
+.footer-links a {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    padding: 18px 20px;
+
+    text-align: center;
+
+    color: #dce7f1;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+    font-size: 13px;
+}
+
+/* =========================================
+   Responsive tabletă
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .brand-text span {
+        display: none;
+    }
+
+    .nav {
+        gap: 16px;
+    }
+
+    .three-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   Responsive telefon
+========================================= */
+
+@media (max-width: 760px) {
+
+    .header-container {
+        min-height: 72px;
+    }
+
+    .header-logo {
+        width: 65px;
+    }
+
+    .brand-text strong {
+        font-size: 19px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: 72px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 25px;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--border);
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 8px 0;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 0;
+    }
+
+    .hero-logo {
+        width: 180px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .three-columns,
+    .objectives-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .objective {
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================
+   Telefon foarte mic
+========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .card {
+        padding: 26px;
+    }
+
+    .objective {
+        flex-direction: column;
+    }
+
+}
