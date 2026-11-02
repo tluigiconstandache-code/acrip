@@ -857,3 +857,13 @@ button {
     }
 
 }
+
+/* Spatiere videoclipuri ACRIP */
+#video .video-item iframe {
+    display: block;
+    margin-top: 20px;
+}
+
+#video .video-item + .video-item {
+    margin-top: 25px;
+}
