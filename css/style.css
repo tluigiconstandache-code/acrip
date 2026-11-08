@@ -870,3 +870,31 @@ button {
 #video .video-item + .video-item {
     margin-top: 25px;
 }
+
+/* Corectare distante intre emisiuni */
+
+#video .video-item iframe {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#video .video-item iframe + p {
+    margin-top: -40px;
+    position: relative;
+}
+
+#video .video-item + .video-item {
+    margin-top: 60px;
+}
+#video .video-item:nth-of-type(3) iframe + p {
+    margin-top: -40px;
+    position: relative;
+}
+/* Corectare distanta doar la prima emisiune */
+#video .video-item:first-of-type iframe + p {
+    margin-top: -55px;
+    position: relative;
+}
+#video .video-item:first-of-type iframe {
+    margin-bottom: -40px;
+}
